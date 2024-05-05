@@ -1,0 +1,41 @@
+
+:root {
+    --purple-accent: #646cff;
+    --blue-accent: #61dafb;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+li > div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+li label {
+    color: var(--purple-accent);
+}
+
+li input {
+    padding: 0.6em 1.2em;
+    background-color: whitesmoke;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: ease-in-out 0.5s;
+}
+li input:focus,
+li input:focus-visible {
+    outline: none;
+    border-color: var(--purple-accent);
+    filter: drop-shadow(0 0 0.5rem #646cffaa);
+}
+
+li .opt {
+    color: gray;
+    font-size: 0.5rem;
+    font-weight: 600;
+    align-self: flex-end;
+}
