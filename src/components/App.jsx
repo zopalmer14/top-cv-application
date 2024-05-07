@@ -1,6 +1,7 @@
 
 import Section from './Section.jsx'
 import ResumeHeader from './ResumeHeader.jsx';
+import ResumeSection from './ResumeSection.jsx';
 import '../styles/App.css';
 
 // input data 

@@ -1,0 +1,26 @@
+
+.entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.entry-container .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.entry-container .header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.entry-container .header h2 {
+    font-weight: 600;
+}
+
+.entry-container .header .right-side {
+    align-items: flex-end; 
+}

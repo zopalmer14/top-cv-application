@@ -8,7 +8,15 @@ function Section({ title, inputs }) {
             <h1>{title}</h1>
             <ul>
                 {inputs && inputs.map((input) => {
-                    return <CustomInput key={input.label} type={input.type} label={input.label} placeholder={input.placeholder} optText={input.optText} />
+                    return (
+                        <CustomInput 
+                            key={input.label} 
+                            type={input.type} 
+                            label={input.label} 
+                            placeholder={input.placeholder} 
+                            optText={input.optText} 
+                        />
+                    )
                 })}
             </ul>
             <div className="button-container">
