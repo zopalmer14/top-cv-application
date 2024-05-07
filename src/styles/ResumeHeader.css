@@ -1,0 +1,33 @@
+
+:root {
+    --purple-accent: #646cff;
+    --blue-accent: #61dafb;
+}
+
+.resume header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 2rem;
+    background-color: var(--purple-accent);
+    color: white;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+header .opt-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header .opt-info > div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}

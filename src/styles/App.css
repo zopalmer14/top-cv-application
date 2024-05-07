@@ -1,0 +1,16 @@
+
+#root {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resume {
+    box-shadow: 0 0 0.5rem lightgray;
+}
