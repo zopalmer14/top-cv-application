@@ -1,5 +1,6 @@
 
-import Section from './Section.jsx'
+import { useState } from 'react'
+import InputForm from './InputForm.jsx'
 import ResumeHeader from './ResumeHeader.jsx';
 import ResumeSection from './ResumeSection.jsx';
 import '../styles/App.css';
@@ -119,6 +120,13 @@ const experienceInputs = [
     }
 ]
 
+const examplePersonalData = {
+    name: "Test Name",
+    email: "testaddress@gmail.com",
+    phone: "(123) 456-7890",
+    address: "City, Country" 
+}
+
 const exampleEducationData = [
     {
         school: 'University of Southern California',
@@ -153,29 +161,30 @@ const exampleExperienceData = [
 ]
 
 function App() {
+    // react states
+    const [personalInfo, setPersonalInfo] = useState(examplePersonalData);
+
     return (
         <>
             <div className="dashboard">
-                <Section 
+                <InputForm 
                     title="Personal Details" 
                     inputs={personalInputs} 
+                    onSubmit={setPersonalInfo}
                 />
-                <Section 
+                <InputForm 
                     title="Education" 
-                    inputs={educationInputs} 
+                    inputs={educationInputs}
+                    onSubmit={() => ''} 
                 />
-                <Section 
+                <InputForm 
                     title="Work Experience" 
                     inputs={experienceInputs} 
+                    onSubmit={() => ''} 
                 />
             </div>
             <div className='resume'>
-                <ResumeHeader 
-                    name="Test Name"
-                    email="testaddress@gmail.com"
-                    phone="(123) 456-7890"
-                    address="City, Country" 
-                />
+                <ResumeHeader personalInfo={personalInfo} />
                 <ResumeSection 
                     type="Education"
                     entries={exampleEducationData}

@@ -1,27 +1,27 @@
 
 import '../styles/ResumeHeader.css';
 
-function ResumeHeader({ name, email, phone, address }) {
+function ResumeHeader({ personalInfo }) {
     return (
         <header>
-            {name && <h1>{name}</h1>}
+            {personalInfo.name && <h1>{personalInfo.name}</h1>}
             <div className='opt-info'>
-                {email && (
+                {personalInfo.email && (
                     <div>
                         <span className='material-icons'>email</span>
-                        {email}
+                        {personalInfo.email}
                     </div>
                 )}
-                {phone && (
+                {personalInfo.phone && (
                     <div>
                         <span className='material-icons'>phone</span>
-                        {phone}
+                        {personalInfo.phone}
                     </div>
                 )}
-                {address && (
+                {personalInfo.address && (
                     <div>
                         <span className='material-icons'>location_city</span>
-                        {address}
+                        {personalInfo.address}
                     </div>
                 )}
             </div>

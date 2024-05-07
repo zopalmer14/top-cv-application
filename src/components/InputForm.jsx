@@ -1,10 +1,10 @@
 
 import CustomInput from './CustomInput.jsx'
-import '../styles/Section.css';
+import '../styles/InputForm.css';
 
-function Section({ title, inputs }) {
+function InputForm({ title, inputs, onSubmit }) {
     return (
-        <div className="section-container">
+        <form className="input-form">
             <h1>{title}</h1>
             <ul>
                 {inputs && inputs.map((input) => {
@@ -20,11 +20,11 @@ function Section({ title, inputs }) {
                 })}
             </ul>
             <div className="button-container">
-                <button>Edit</button>
-                <button>Submit</button>
+                <button type="reset">Clear</button>
+                <button type="submit">Submit</button>
             </div>
-        </div>
+        </form>
     )
 }
 
-export default Section;
+export default InputForm;
