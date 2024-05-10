@@ -163,9 +163,10 @@ const exampleExperienceData = [
 function App() {
     // react states
     const [personalInfo, setPersonalInfo] = useState(examplePersonalData);
+    const [educationEntries, setEducationEntries] = useState(exampleEducationData);
 
     // updatePersonalInfo: personal info form submission handling
-    // - create a new personalInfo object with the form data
+    // - create a new object with the form data
     // - then set it as the new state
     const updatePersonalInfo = function updatePersonalInfo(event) {
         event.preventDefault();
@@ -180,6 +181,24 @@ function App() {
         setPersonalInfo(newPersonalInfo)
     }
 
+    // updateEducationEntries: education info form submission handling
+    // - create a new object with the form data
+    // - append it to the current state 
+    // - then set the state with the new list of entries
+    const updateEducationEntries = function updateEducationEntries(event) {
+        event.preventDefault();
+
+        const newEducationEntry = {
+            school: event.target.school.value,
+            degree: event.target.degree.value,
+            startDate: event.target.startDate.value,
+            endDate: event.target.endDate.value,
+            location: event.target.location.value
+        }
+
+        setEducationEntries([...educationEntries, newEducationEntry])
+    }
+
     return (
         <>
             <div className="dashboard">
@@ -191,7 +210,7 @@ function App() {
                 <InputForm 
                     title="Education" 
                     inputs={educationInputs}
-                    onSubmit={() => ''} 
+                    onSubmit={updateEducationEntries} 
                 />
                 <InputForm 
                     title="Work Experience" 
@@ -203,7 +222,7 @@ function App() {
                 <ResumeHeader personalInfo={personalInfo} />
                 <ResumeSection 
                     type="Education"
-                    entries={exampleEducationData}
+                    entries={educationEntries}
                 />
                 <ResumeSection 
                     type="Professional Experience"
