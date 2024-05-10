@@ -4,7 +4,7 @@ import '../styles/InputForm.css';
 
 function InputForm({ title, inputs, onSubmit }) {
     return (
-        <form className="input-form">
+        <form className="input-form" onSubmit={onSubmit}>
             <h1>{title}</h1>
             <ul>
                 {inputs && inputs.map((input) => {
@@ -13,6 +13,7 @@ function InputForm({ title, inputs, onSubmit }) {
                             key={input.label} 
                             type={input.type} 
                             label={input.label} 
+                            name={input.name}
                             placeholder={input.placeholder} 
                             optText={input.optText} 
                         />

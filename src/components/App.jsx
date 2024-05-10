@@ -164,13 +164,29 @@ function App() {
     // react states
     const [personalInfo, setPersonalInfo] = useState(examplePersonalData);
 
+    // updatePersonalInfo: personal info form submission handling
+    // - create a new personalInfo object with the form data
+    // - then set it as the new state
+    const updatePersonalInfo = function updatePersonalInfo(event) {
+        event.preventDefault();
+
+        const newPersonalInfo = {
+            name: event.target.name.value,
+            email: event.target.email.value,
+            phone: event.target.phone.value,
+            address: event.target.address.value
+        }
+
+        setPersonalInfo(newPersonalInfo)
+    }
+
     return (
         <>
             <div className="dashboard">
                 <InputForm 
                     title="Personal Details" 
                     inputs={personalInputs} 
-                    onSubmit={setPersonalInfo}
+                    onSubmit={updatePersonalInfo}
                 />
                 <InputForm 
                     title="Education" 
