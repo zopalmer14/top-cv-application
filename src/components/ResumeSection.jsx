@@ -5,8 +5,6 @@ import '../styles/ResumeSection.css';
 function ResumeSection({ type, entries }) {
     const isEdu = type === 'Education';
 
-    console.log(entries)
-
     return (
         <div className='resume-section'>
             <h1>{type}</h1>

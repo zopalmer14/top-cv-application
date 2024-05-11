@@ -164,6 +164,7 @@ function App() {
     // react states
     const [personalInfo, setPersonalInfo] = useState(examplePersonalData);
     const [educationEntries, setEducationEntries] = useState(exampleEducationData);
+    const [experienceEntries, setExperienceEntries] = useState(exampleExperienceData);
 
     // updatePersonalInfo: personal info form submission handling
     // - create a new object with the form data
@@ -183,7 +184,7 @@ function App() {
 
     // updateEducationEntries: education info form submission handling
     // - create a new object with the form data
-    // - append it to the current state 
+    // - create a new list of entries from the current state and the new data 
     // - then set the state with the new list of entries
     const updateEducationEntries = function updateEducationEntries(event) {
         event.preventDefault();
@@ -197,6 +198,25 @@ function App() {
         }
 
         setEducationEntries([...educationEntries, newEducationEntry])
+    }
+
+    // updateExperienceEntries: experience info form submission handling
+    // - create a new object with the form data
+    // - create a new list of entries from the current state and the new data 
+    // - then set the state with the new list of entries
+    const updateExperienceEntries = function updateExperienceEntries(event) {
+        event.preventDefault();
+
+        const newExperienceEntry = {
+            company: event.target.company.value,
+            position: event.target.position.value,
+            startDate: event.target.startDate.value,
+            endDate: event.target.endDate.value,
+            location: event.target.location.value,
+            desc: event.target.desc.value
+        }
+
+        setExperienceEntries([...experienceEntries, newExperienceEntry])
     }
 
     return (
@@ -215,7 +235,7 @@ function App() {
                 <InputForm 
                     title="Work Experience" 
                     inputs={experienceInputs} 
-                    onSubmit={() => ''} 
+                    onSubmit={updateExperienceEntries} 
                 />
             </div>
             <div className='resume'>
@@ -226,7 +246,7 @@ function App() {
                 />
                 <ResumeSection 
                     type="Professional Experience"
-                    entries={exampleExperienceData}
+                    entries={experienceEntries}
                 />
             </div>
         </>
