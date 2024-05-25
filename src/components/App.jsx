@@ -227,16 +227,30 @@ function App() {
                     inputs={personalInputs} 
                     onSubmit={updatePersonalInfo}
                 />
-                <InputForm 
-                    title="Education" 
-                    inputs={educationInputs}
-                    onSubmit={updateEducationEntries} 
-                />
-                <InputForm 
-                    title="Work Experience" 
-                    inputs={experienceInputs} 
-                    onSubmit={updateExperienceEntries} 
-                />
+                {educationEntries ? (
+                    <ResumeEntryList 
+                        type="Education"
+                        entries={educationEntries}
+                    />
+                ) : (
+                    <InputForm 
+                        title="Education" 
+                        inputs={educationInputs}
+                        onSubmit={updateEducationEntries} 
+                    />
+                )}
+                {experienceEntries ? (
+                    <ResumeEntryList 
+                        type="Work Experience"
+                        entries={experienceEntries}
+                    />
+                ) : (
+                    <InputForm 
+                        title="Work Experience" 
+                        inputs={experienceInputs} 
+                        onSubmit={updateExperienceEntries} 
+                    />
+                )}
             </div>
             <div className='resume'>
                 <ResumeHeader personalInfo={personalInfo} />
@@ -245,7 +259,7 @@ function App() {
                     entries={educationEntries}
                 />
                 <ResumeSection 
-                    type="Professional Experience"
+                    type="Work Experience"
                     entries={experienceEntries}
                 />
             </div>
