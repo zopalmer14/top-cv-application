@@ -54,10 +54,13 @@ table {
 /* Base Styling */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.2;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2;
+
+	--purple-accent: #646cff;
+	--blue-accent: #61dafb;
 }
 
 body, button, label {

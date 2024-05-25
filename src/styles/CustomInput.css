@@ -1,9 +1,4 @@
 
-:root {
-    --purple-accent: #646cff;
-    --blue-accent: #61dafb;
-}
-
 li {
     display: flex;
     flex-direction: column;

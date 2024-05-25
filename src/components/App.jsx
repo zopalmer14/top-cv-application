@@ -1,8 +1,14 @@
 
+// packages & libraries 
 import { useState } from 'react'
+
+// components
+import ResumeEntryList from './ResumeEntryList.jsx'
 import InputForm from './InputForm.jsx'
 import ResumeHeader from './ResumeHeader.jsx';
 import ResumeSection from './ResumeSection.jsx';
+
+// styling
 import '../styles/App.css';
 
 // input data 
