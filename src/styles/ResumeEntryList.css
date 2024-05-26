@@ -25,9 +25,22 @@
     gap: 1rem;
 }
 
+.list-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
 .list-container ul li:not(:last-child) {
     padding-bottom: 1rem;
     border-bottom: 1px solid black;
+}
+
+.list-container ul li span:hover {
+    cursor: pointer;
+    color: red;
+    transition: 0.25s ease-in-out;
 }
 
 .list-container button {

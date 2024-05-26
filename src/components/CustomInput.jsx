@@ -3,7 +3,7 @@ import '../styles/CustomInput.css';
 
 function CustomInput({ type, label, name, placeholder, optText }) {
     return (
-        <li>
+        <li className='input-item'>
             <div>
                 <label htmlFor={name}>{label}</label>
                 {optText && <div className="opt">{optText}</div>}
