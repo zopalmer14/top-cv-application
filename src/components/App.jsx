@@ -196,6 +196,7 @@ function App() {
     // - create a new object with the form data
     // - create a new list of entries from the current state and the new data 
     // - then set the state with the new list of entries
+    // - hide the form and show the entry list
     const updateEducationEntries = function updateEducationEntries(event) {
         event.preventDefault();
 
@@ -208,12 +209,14 @@ function App() {
         }
 
         setEducationEntries([...educationEntries, newEducationEntry])
+        setEduFormShowing(false)
     }
 
     // updateExperienceEntries: experience info form submission handling
     // - create a new object with the form data
     // - create a new list of entries from the current state and the new data 
     // - then set the state with the new list of entries
+    // - hide the form and show the entry list
     const updateExperienceEntries = function updateExperienceEntries(event) {
         event.preventDefault();
 
@@ -227,6 +230,7 @@ function App() {
         }
 
         setExperienceEntries([...experienceEntries, newExperienceEntry])
+        setExpFormShowing(false)
     }
 
     return (
@@ -247,6 +251,7 @@ function App() {
                     <ResumeEntryList 
                         type="Education"
                         entries={educationEntries}
+                        onClick={() => setEduFormShowing(true)}
                     />
                 )}
                 {expFormShowing ? (
@@ -259,6 +264,7 @@ function App() {
                     <ResumeEntryList 
                         type="Work Experience"
                         entries={experienceEntries}
+                        onClick={() => setExpFormShowing(true)}
                     />
                 )}
             </div>
