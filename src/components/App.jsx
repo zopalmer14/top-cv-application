@@ -167,10 +167,14 @@ const exampleExperienceData = [
 ]
 
 function App() {
-    // react states
+    // react states for resume info
     const [personalInfo, setPersonalInfo] = useState(examplePersonalData);
     const [educationEntries, setEducationEntries] = useState(exampleEducationData);
     const [experienceEntries, setExperienceEntries] = useState(exampleExperienceData);
+
+    // react states for conditional rendering
+    const [eduFormShowing, setEduFormShowing] = useState(false);
+    const [expFormShowing, setExpFormShowing] = useState(false);
 
     // updatePersonalInfo: personal info form submission handling
     // - create a new object with the form data
@@ -233,28 +237,28 @@ function App() {
                     inputs={personalInputs} 
                     onSubmit={updatePersonalInfo}
                 />
-                {educationEntries ? (
-                    <ResumeEntryList 
-                        type="Education"
-                        entries={educationEntries}
-                    />
-                ) : (
+                {eduFormShowing ? (
                     <InputForm 
                         title="Education" 
                         inputs={educationInputs}
                         onSubmit={updateEducationEntries} 
+                    /> 
+                ) : (
+                    <ResumeEntryList 
+                        type="Education"
+                        entries={educationEntries}
                     />
                 )}
-                {experienceEntries ? (
-                    <ResumeEntryList 
-                        type="Work Experience"
-                        entries={experienceEntries}
-                    />
-                ) : (
+                {expFormShowing ? (
                     <InputForm 
                         title="Work Experience" 
                         inputs={experienceInputs} 
                         onSubmit={updateExperienceEntries} 
+                    /> 
+                ) : (
+                    <ResumeEntryList 
+                        type="Work Experience"
+                        entries={experienceEntries}
                     />
                 )}
             </div>
